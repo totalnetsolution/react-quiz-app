@@ -24,7 +24,6 @@ const QuizApp = () => {
     setSelectedAnswer(answer);
   };
 
-  // Move to the next question
   const handleNextQuestion = () => {
     if (selectedAnswer === questions[currentQuestion].correctAnswer) {
       setScore(score + 1);
@@ -38,10 +37,8 @@ const QuizApp = () => {
     }
   };
 
-  // Show loading message while data is being fetched
   if (!questions.length) return <p className="text-center mt-20">Loading questions...</p>;
 
-  // Render the quiz
   return (
     <div className="p-10">
       <h1 className="text-3xl font-bold text-center">Trivia Quiz</h1>
