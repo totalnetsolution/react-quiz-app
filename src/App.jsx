@@ -8,12 +8,10 @@ const QuizApp = () => {
   const [score, setScore] = useState(0);
   const [quizEnd, setQuizEnd] = useState(false);
 
-  // Fetching data from the Trivia API
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
         const response = await axios.get("https://the-trivia-api.com/v2/questions");
-        // Handle the structure of the response
         setQuestions(response.data);
       } catch (error) {
         console.error("Error fetching trivia questions", error);
@@ -22,7 +20,6 @@ const QuizApp = () => {
     fetchQuestions();
   }, []);
 
-  // Handle when an answer is selected
   const handleAnswerSelection = (answer) => {
     setSelectedAnswer(answer);
   };
